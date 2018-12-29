@@ -1,6 +1,7 @@
 {
   "name": "WEB全栈笔记",
   "ver": "1.0.0",
-  "logo": "./amWiki/images/logo.png",
-  "testing": true
+  "logo": "./amWiki/images/logo.jpg",
+  "testing": true,
+  "colour":"#25c6fc"
   }

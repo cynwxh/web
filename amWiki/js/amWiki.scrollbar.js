@@ -155,7 +155,7 @@
             this.$e.inner.removeAttr('style').removeClass('on');
         } else {
             this.$e.inner.css({
-                width: this.$e.container.width() + 30,
+                width: this.$e.container.width() ,
                 paddingRight: 13,
                 paddingBottom: 16
             }).addClass('on');

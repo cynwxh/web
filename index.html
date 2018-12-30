@@ -286,17 +286,23 @@
             document.addEventListener('visibilitychange', function () {
                 if (document.hidden) {
                     $('[rel="shortcut icon"]').attr('href', "./amWiki/images/logo.png");
-                    document.title = '(●—●)喔哟，崩溃啦！';
+                    document.title = '(●—●)死鬼，去哪里啦！';
                     clearTimeout(titleTime);
                 } else {
                     $('[rel="shortcut icon"]').attr('href', "./amWiki/images/logo.png");
-                    document.title = '(/≧▽≦/)咦！又好了！' + OriginTitile;
+                    document.title = '(/≧▽≦/)没关系呀！你不是抓到我了嘛！' + OriginTitile;
                     titleTime = setTimeout(function () {
                         document.title = OriginTitile;
                     }, 2000);
                 }
             });
         }
+    </script>
+    <script>
+        console.log("这篇文档是我在学习web全栈相关知识时做的一些笔记，")
+        console.log("部分内容还在持续整理中，在开发过程中遇到的一些问题也会及时的记录下来分享给大家，")
+        console.log("整理不易，多多支持！如果有问题可以联系我。")
+        console.log("微信：C949883887，邮箱：949883887@qq.com")
     </script>
 </body>
 

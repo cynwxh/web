@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width" />
+    <title>WEB全栈学习笔记</title>
+    <link rel="shortcut icon" href="./amWiki/images/logo.png">
+</head>
+<body>
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script>
+        window.onload = function () {
+            var OriginTitile = document.title;
+            var titleTime;
+            document.addEventListener('visibilitychange', function () {
+                if (document.hidden) {
+                    $('[rel="shortcut icon"]').attr('href', "/Content/Images/fail.ico");
+                    document.title = '(●—●)喔哟，崩溃啦！';
+                    clearTimeout(titleTime);
+                } else {
+                    $('[rel="shortcut icon"]').attr('href', "./amWiki/images/logo.png");
+                    document.title = '(/≧▽≦/)咦！又好了！' + OriginTitile;
+                    titleTime = setTimeout(function () {
+                        document.title = OriginTitile;
+                    }, 2000);
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>

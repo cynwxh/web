@@ -1,32 +1,4 @@
-## ifram标签
-* 引入一个网页
-```
-<!DOCTYPE html>
-<html lang="zh">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>iframe</title>
-    <style>
-        iframe{
-        width: 100%;
-        height: 500px;
-        }
-    </style>
-</head>
-<body>
-    <iframe src="../mi/index.html" frameborder="0"></iframe>
-</body>
-</html>
-```
-## import标签
-* 引入css样式 在css文件顶部引入
-```
-@import "reset.css";
-```
-
-# HTML5
+# HTML5新特性
 * 简化的html语法
 * 标签：新增，删除
     * 语义化标签
@@ -43,57 +15,7 @@
 * canvans 网页画图
 * 网页存储
 
-# css选择器
-### 交叉选择器：选中同时符合多个选择器的标签
-```
-.box.list{}
-<div class="box list"></div>
-<!--选中的是既有box类名又有list类名的标签-->
-```
-### 子代选择器 父>子 只能选中直接子元素
-```
-.box>a{}
-<div class="box">
-<a>         <!--选中的是直接子元素-->
-<a></a>
-</a>
-</div>
-```
-### 属性选择器
-* [属性名] 选中拥有该属性名的标签
-```
-[type]{}
-<!--选中有type属性的标签-->
-```
-
-* [属性名="属性值"] 选中属性名等于该属性值的标签
-    
-```
-[type="text"]{}
-<!--选中type=text的标签-->
-```
-* [属性名^=属性值] 选中属性名中以该属性值开头的标签
-```
-[class^=box]{}
-<div class="box1"></div>
-<div class="box2"></div>
-<!--box1和box2都将被选中-->
-```
-* [属性名$=属性值] 选中属性名中以该属性值结尾的标签
-```
-[class^=box]{}
-<div class="nbox"></div>
-<div class="bbox"></div>
-<!--nbox和bbox都将被选中-->
-```
-* [属性名*=属性值] 选中属性名中包含该属性值的标签
-```
-[class^=box]{}
-<div class="box1"></div>
-<div class="box2"></div>
-<!--box1和box2都将被选中-->
-```
-## css3新增样式
+## css3新特性
 ### 颜色
 * red
 * 十六进制 #000000;
@@ -178,3 +100,76 @@ box-shadow: 20px 20px 20px 10px red inset,20px 20px 20px 10px blue;
 <!--向左向下20px 20px的模糊 大小10px 红色 内阴影，向左向下20px 20px的模糊 大小10px 蓝色 外阴影-->
 ```
 * overflow：hidden（超出隐藏）
+
+### 文字阴影
+* text-shadow:水平偏移 垂直偏移 模糊程度 颜色；
+
+### 首行缩进
+* text-indent: px/em
+* 1em表示当前标签的font-size的大小
+
+### word-break:break-all;
+* 英文文字换行规则，截断英文单词填满整行
+
+### 字间距
+* letter-spacing:px;
+
+### 文字描边
+* webkit-text-stroke:1px red;1像素 红色描边
+
+## 过渡
+* transition,当某一个样式发生改变，这个样式的变化经过一定的时间
+* transition:需要过度的样式 时间 运动方式(贝塞尔曲线) 延时
+    * 运动方式ease:慢-快-慢
+    * 运动方式linear:匀速
+```
+transition: background 1s linear 1s;
+<!--背景颜色过度一秒 匀速 延时一秒-->
+```
+* 第一个过渡写完逗号隔开写第二个
+* 哪个标签需要样式变化，标签本身加transition，不能加到hover上
+* 某些样式不能过渡，没有中间值的不能过度
+* 过度必须要有初始值和结束值 值必须确定
+
+## css3动画
+1.绘制动画
+
+@keyframes name{
+    0%{
+        初始样式
+    }
+    100%{
+        结束样式
+    }
+}
+
+2.播放动画
+
+.box{
+    animation:动画名称 时间 动画方式 延时 播放次数(无穷大infinite) 是否往复播放(alternate) 是否保留初始/结束帧(both 初始和结束帧都保留)；
+}
+
+## css3 2D转换 transform
+平移，旋转，缩放
+相对自身移动，不会影响其他元素
+
+1.transform:translate(水平平移 ，垂直平移)；单位使用百分比指相对于自身的百分比
+```
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%,-50%)
+<!--水平垂直居中-->
+```
+
+2.transform:rotate(角度);       旋转  transform-origin：px % top/right..转换中心点
+
+3.transform:scale(倍数)   缩放
+## css3 3D转换  transform
+平移，旋转，缩放
+
+景深：用户到3D场景的距离
+
+1. transform:translate3d(x,y,z)
+2. transform:rotate3d(x,y,z,旋转角度)xyz指是否旋转
+3. transform:scale3d(x,y,z)   xyz的值是缩放倍数

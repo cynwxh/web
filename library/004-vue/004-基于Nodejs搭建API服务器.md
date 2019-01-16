@@ -15,18 +15,18 @@ app.use(function(req, res, next) {
 ```
 
 CORS跨域
-res.header("Access-Control-Allow-Origin", "*"); 
+`res.header("Access-Control-Allow-Origin", "*"); `
 //允许那些主机访问
     所有主机  *   
     指定主机  http://www.dingai.com
 
 //允许请求类型
-res.header("Access-Control-Allow-Methods","PUT,POST,GET,DELETE,OPTIONS");  
+`res.header("Access-Control-Allow-Methods","PUT,POST,GET,DELETE,OPTIONS"); `
 
 //响应的类型
-res.header("Content-Type", "application/json;charset=utf-8");  
+`res.header("Content-Type", "application/json;charset=utf-8");`
 
-res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type"); 
+`res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type");`
 
 
 

@@ -30,6 +30,7 @@
 - [jQuery](?file=002-javascript/019-jQuery "jQuery")
 - [插件](?file=002-javascript/020-插件 "插件")
 - [扩展](?file=002-javascript/021-扩展 "扩展")
+- [附录1开发技巧](?file=002-javascript/022-附录1开发技巧 "附录1开发技巧")
 
 ##### react
 - [React](?file=003-react/001-React "React")

@@ -18,6 +18,8 @@
     - [JS（一）认识 JavaScript](?file=002-javascript/001-ES5基础语法/001-JS（一）认识 JavaScript "JS（一）认识 JavaScript")
     - [JS（二）引入、变量、值类型、运算符](?file=002-javascript/001-ES5基础语法/002-JS（二）引入、变量、值类型、运算符 "JS（二）引入、变量、值类型、运算符")
     - [JS（三） 比较运算符、逻辑运算符](?file=002-javascript/001-ES5基础语法/003-JS（三） 比较运算符、逻辑运算符 "JS（三） 比较运算符、逻辑运算符")
+    - [JS（四）条件语句、循环语句](?file=002-javascript/001-ES5基础语法/004-JS（四）条件语句、循环语句 "JS（四）条件语句、循环语句")
+    - [JS（五）简要介绍数组或对象 typeof、类型转换](?file=002-javascript/001-ES5基础语法/005-JS（五）简要介绍数组或对象 typeof、类型转换 "JS（五）简要介绍数组或对象 typeof、类型转换")
 - [移动端事件](?file=002-javascript/018-移动端事件 "移动端事件")
 - [jQuery](?file=002-javascript/019-jQuery "jQuery")
 - [插件](?file=002-javascript/020-插件 "插件")

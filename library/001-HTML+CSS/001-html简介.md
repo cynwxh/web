@@ -1,6 +1,6 @@
 # HTML 简介
 
-刚进入前端领域，最先听到的名词估计就是  HTML，写几行 HTML，打开浏览器，就能立马看到效果，前端所见即所得，这也是它的迷人之处，那 HTML 到底是什么呢？它有什么规则，它发挥着什么作用？
+刚进入前端领域，最先听到的名词估计就是 HTML，写几行 HTML，打开浏览器，就能立马看到效果，前端所见即所得，这也是它的迷人之处，那 HTML 到底是什么呢？它有什么规则，它发挥着什么作用？
 
 ### HTML 是什么
 
@@ -10,7 +10,9 @@ HTML 的全称是超文本标记语言（HyperText Markup Language），它不�
 
 HTML 元素由标签嵌套内容组成，HTML 元素可以嵌套。我们来看下一个简单的 HTML 元素：
 
-    <p>我是一个段落</p>
+```html
+<p>我是一个段落</p>
+```
 
 在这里，<p> 和 </p> 便是标签了。标签是由尖括号（<>）包含关键词（p），标签包括了开始标签和结束标签，在上面的例子中，<p> 就是开始标签，</p> 即结束标签，它们是一对，所以标签通常是成对出现的。
 
@@ -18,13 +20,17 @@ HTML 元素由标签嵌套内容组成，HTML 元素可以嵌套。我们来看�
 
 HTML 元素之间可以嵌套，比如我想在段落上加上斜体，我可以这样：
 
-    <p>我是一个段落，<i>我是段落里的斜体部分</i></p>
+```html
+<p>我是一个段落，<i>我是段落里的斜体部分</i></p>
+```
 
 在浏览器中的效果，可点击[这里](https://codepen.io/zouguanghua/pen/QJeYVV)查看。
 
 HTML 标签可以拥有属性，属性放在开始标签中，属性与关键词之间、属性与属性之间有空格隔开。属性等号“=”后面便是属性值，属性值由引号""引起来，我们来看一个例子。
 
-    <imgalt="image"src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/2664816/profile/profile-512.jpg?1544158617">
+```html
+<imgalt="image"src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/2664816/profile/profile-512.jpg?1544158617">
+```
 
 属性 src 指定了图片的 url 地址，alt 属性定义了可替换文本，当浏览器无法载入图片时，浏览器将显示这个替换文本。可以点击[这里](https://codepen.io/zouguanghua/pen/wQVOKY)查看效果。
 
@@ -38,7 +44,14 @@ HTML 元素自带的一些特性让它们在浏览器中表现有差异，我们
 -
 行内元素紧挨着显示，不会自动换行，行内元素通常被块级元素包含着嵌套显示。
 
-    <p>我是一个段落</p><p>我是一个段落</p><p>我是一个段落，<i>我是段落里的斜体部分</i></p><span>我是一段文字</span><span>我是一段文字</span><span>我是一段文字</span>
+```html
+<p>我是一个段落</p>
+<p>我是一个段落</p>
+<p>我是一个段落，<i>我是段落里的斜体部分</i></p>
+<span>我是一段文字</span>
+<span>我是一段文字</span>
+<span>我是一段文字</span>
+```
 
 在上面的例子中，p 元素总是独占一行显示，它是块级元素，i 和 span 元素则没有换行，是行内元素。可以点击[这里](https://codepen.io/zouguanghua/pen/WYVWJR)查看效果。
 
@@ -46,7 +59,21 @@ HTML 元素自带的一些特性让它们在浏览器中表现有差异，我们
 
 打开不同的网站我们会发现，它们有着类似的结构，下面给出了一个简单的示例，我们来看看一个完整的 HTML 页面由哪些部分构成。
 
-    <!DOCTYPE html><html><head><metacharset="utf-8"><title>HTML 示例</title><linkrel="stylesheet"type="text/css"href="xxx.css"><scriptsrc="xxx.js"></script></head><body><h1>我是标题</h1><p>我是段落</p></body></html>
+```html
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <metacharset="utf-8">
+            <title>HTML 示例</title>
+            <linkrel="stylesheet"type="text/css"href="xxx.css">
+            <scriptsrc="xxx.js"></script>
+        </head>
+        <body>
+            <h1>我是标题</h1>
+            <p>我是段落</p>
+        </body>
+    </html>
+```
 
 #### DOCTYPE
 
@@ -61,6 +88,7 @@ HTML5 不基于 SGML，所以不需要引入 DTD，只需要 `<!DOCTYPE html>` �
 #### head
 
 head 元素是头部元素，它包含的内容不会在页面中显示。head 元素可以包含标题信息，元信息，样式表和脚本等。在上面的例子中，我们在 head 元素里添加了一些其他元素，我们来看下它们有什么作用。
+
 ```
  <meta>标签提供了页面相关数据信息，例子中的 `<meta charset="utf-8">` 就定义了该文档使用 utf-8 字符编码集。同时还可以通过 <meta> 标签设置页面的描述、关键词等信息，这些信息有利于 SEO（Search Engine Optimization，搜索引擎优化），也就是利用搜索引擎的规则提高网站在有关搜索引擎内的自然排名。通俗来讲就是用户在搜索页面时，你的网站会更靠前。
 
@@ -69,24 +97,37 @@ head 元素是头部元素，它包含的内容不会在页面中显示。head �
 <title> 标签定义了页面的标题，我们在浏览器中打开一个页面，浏览器标签栏上的标题便是由它定义的。
 
 <link> 标签通常用来链接一些与页面相关的外部资源，比如 css 文件。我们也能通过 <link> 标签来设置浏览器标签栏上的图标。
+```
 
-    <linkrel="icon"href="xxx.ico">
+```html
+<link rel="icon" href="xxx.ico" />
+```
 
+```
 除了用 <link> 标签引入外部 css 文件，我们还可以通过 <style> 标签直接定义样式信息。
+```
 
-    <styletype="text/css">h1 {
-    color: #FFB5BF;
+```html
+    <styletype="text/css">
+    h1 {
+        color: #FFB5BF;
         }
     p {
     font-size: 16px;
         }
     </style>
+```
 
+```
 <script> 标签为页面引入脚本文件，我们可直接使用它的 src 属性，引入脚本文件的地址，也可以直接在页面中插入 JavaScript 代码。
+```
 
-    <scripttype="text/javascript">document.write('Hello World!')
+```html
+    <scripttype="text/javascript">
+        document.write('Hello World!')
     </script>
 ```
+
 > 在 HTML5 中，style 标签和 script 标签的 type 值都不再是必须的，默认值分别为“text/css”和“text/javascript”。
 
 #### body
@@ -98,6 +139,7 @@ body 元素定义了文档的主体，包含了所有显示在页面上的内容
 ### HTML 语义化
 
 HTML 语义化是指仅仅从 HTML 元素上就能看出页面的大致结构，比如需要强调的内容可以放在 <strong> 标签中，而不是通过样式设置 <span> 标签去做。不同浏览器对 HTML 元素的解析可能有差异，HTML 语义化便是在抛开样式之后，页面能有一个友好的展示效果。我们力求让页面有良好的结构，让页面的元素有含义，同时利于被搜索引擎解析，利于 SEO。HTML 语义化的建议：
+
 ```
 少使用无意义的 <div>、<span> 标签；
 
@@ -109,6 +151,7 @@ HTML 语义化是指仅仅从 HTML 元素上就能看出页面的大致结构，
 
 与表单、有序列表、无序列表相关的标签不要单独使用。
 ```
+
 HTML5 也新增了一些语义化的元素，我们通过标签名就能判断标签内容。使用语义元素的页面大致结构如下：
 
 ![](https://cdn.nlark.com/yuque/0/2018/png/199663/1544180720457-6e1c631d-4a2e-4c29-9afa-c6668256a369.png)
@@ -130,21 +173,17 @@ HTML5 也新增了一些语义化的元素，我们通过标签名就能判断�
 
 <footer> 标签位于页面或页面某个区域的底部，用来设置页脚，通常包含版权信息，联系方式等。
 ```
+
 ### 小结
 
 本文简单介绍了一下 HTML 的作用和 HTML 元素的组成部分，以及如何更好地使用 HTML，即语义化。在这一小节中，你需要掌握：
 
--
-HTML 元素由哪些部分组成；
+-HTML 元素由哪些部分组成；
 
--
-区分块级元素和行内元素；
+-区分块级元素和行内元素；
 
--
-了解 HTML 文档的大致架构；
+-了解 HTML 文档的大致架构；
 
--
-HTML 语义化；
+-HTML 语义化；
 
--
-阅读 HTML 教程，熟练掌握 HTML 元素的用法。
+-阅读 HTML 教程，熟练掌握 HTML 元素的用法。

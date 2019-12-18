@@ -6,7 +6,7 @@ Flexbox（全称 Flexible Box）布局，也叫 Flex 布局，意为“弹性布
 
 ### 一些概念
 
-在开始学习Flex 布局前，我们先来熟悉下有关 Flex 布局的几个概念，这些概念可以帮助对后文的理解。
+在开始学习 Flex 布局前，我们先来熟悉下有关 Flex 布局的几个概念，这些概念可以帮助对后文的理解。
 
 ![](https://cdn.nlark.com/yuque/0/2018/png/199663/1542896341060-89f557f2-6905-48c6-bf07-81a5f7a1adb0.png)
 
@@ -28,7 +28,7 @@ Flex 布局中有两条看不见的轴线：主轴（main axis）和交叉轴（
 
 在上面的相关概念中，比较重要的是主轴、交叉轴，和它们的开始位置、结束位置。子元素在父元素中会沿着主轴从 main start 到 main end 排列，沿着交叉轴从 cross start 到 cross end 排列。在常规的布局中，浏览器是从左到右排列，挤不下了就换行，在这种情况下，主轴是水平方向，交叉轴是垂直方向，主轴是从左到右，交叉轴是从上到下。
 
-在 Flex 布局中，默认的主轴方向也是水平的，交叉轴是垂直的，通过改变  `flex-direction` 和 `flex-wrap` 的属性值可以分别改变两个轴的方向和它们的开始位置、起始位置，这就让布局更加灵活多变了。
+在 Flex 布局中，默认的主轴方向也是水平的，交叉轴是垂直的，通过改变 `flex-direction` 和 `flex-wrap` 的属性值可以分别改变两个轴的方向和它们的开始位置、起始位置，这就让布局更加灵活多变了。
 
 了解完 Flex 布局相关的抽象概念，接下来我们来看看有关 Flex 布局的属性部分，这里分为两部分介绍，一是作用于父元素（容器）的，二是作用于子元素（项目）的。
 
@@ -36,11 +36,11 @@ Flex 布局中有两条看不见的轴线：主轴（main axis）和交叉轴（
 
 display 属性用来将父元素定义为 Flex 布局的容器，设置 display 值为 `display: flex;` 容器对外表现为块级元素；`display: inline-flex;` 容器对外表现为行内元素，对内两者表现是一样的。
 
-    <divclass="container"></div>
-
-    .container {
-    display: flex | inline-flex;
-    }
+```css
+<div class="container" > </div > .container {
+  display: flex | inline-flex;
+}
+```
 
 上面的代码就定义了一个 Flex 布局的容器，我们有以下六个属性可以设置的容器上：
 
@@ -66,11 +66,26 @@ align-content
 
 flex-direction 定义了主轴的方向，即项目的排列方向。
 
-    <divclass="container"><divclass="item">1</div><divclass="item">2</div><divclass="item">3</div><divclass="item">4</div></div>
-
-    .container {
-    flex-direction: row | row-reverse | column | column-reverse;
-    }
+```css
+<div
+  class="container"
+  > <div
+  class="item"
+  > 1</div
+  > <div
+  class="item"
+  > 2</div
+  > <div
+  class="item"
+  > 3</div
+  > <div
+  class="item"
+  > 4</div
+  > </div
+  > .container {
+  flex-direction: row | row-reverse | column | column-reverse;
+}
+```
 
 -
 row（默认值）：主轴在水平方向，起点在左侧，也就是我们常见的从左到右；
@@ -104,9 +119,11 @@ column-reverse: 主轴在垂直方向，起点在下沿。
 
 默认情况下，项目是排成一行显示的，flex-wrap 用来定义当一行放不下时，项目如何换行。
 
-    .container {
-    flex-wrap: nowrap | wrap | wrap-reverse;
-    }
+```css
+.container {
+  flex-wrap: nowrap | wrap | wrap-reverse;
+}
+```
 
 假设此时主轴是从左到右的水平方向：
 
@@ -137,17 +154,21 @@ wrap-reverse：换行，第一行在下面。
 
 flex-flow 是 flex-direction 和 flex-wrap 的简写，默认值是 row no-wrap。
 
-    .container {
-    flex-flow: <flex-direction> || <flex-wrap>;
-    }
+```css
+.container {
+  flex-flow: <flex-direction> || <flex-wrap>;
+}
+```
 
 #### justify-content
 
 justify-content 定义了项目在主轴上的对齐方式。
 
-    .container {
-    justify-content: flex-start | flex-end | center | space-between | space-around;
-    }
+```css
+.container {
+  justify-content: flex-start | flex-end | center | space-between | space-around;
+}
+```
 
 -
 flex-start（默认）：与主轴的起点对齐；
@@ -190,9 +211,11 @@ space-around：每个项目的两侧间隔相等，所以项目与项目之间�
 
 align-items 定义了项目在交叉轴上如何对齐。
 
-    .container {
-        align-items: flex-start | flex-end | center | baseline | stretch;
-    }
+```css
+.container {
+  align-items: flex-start | flex-end | center | baseline | stretch;
+}
+```
 
 -
 flex-start：与交叉轴的起点对齐；
@@ -235,9 +258,12 @@ stretch（默认值）：如果项目未设置高度或者为 auto，项目将�
 
 align-content 定义了多根轴线的对齐方式，若此时主轴在水平方向，交叉轴在垂直方向，align-content 就可以理解为多行在垂直方向的对齐方式。项目排列只有一行时，该属性不起作用。
 
-    .container {
-    align-content: flex-start | flex-end | center | space-between | space-around | stretch;
-    }
+```css
+.container {
+  align-content: flex-start | flex-end | center | space-between | space-around |
+    stretch;
+}
+```
 
 -
 flex-start：与交叉轴的起点对齐；
@@ -307,9 +333,11 @@ align-self
 
 order 定义了项目的排列顺序，默认值为 0，数值越小，排列越靠前。
 
-    .item {
-    order: <integer>;
-    }
+```css
+.item {
+  order: <integer>;
+}
+```
 
 ![](https://cdn.nlark.com/yuque/0/2018/png/199663/1543129295187-2d1b848e-07e8-4bb5-b40e-d5971dc6ad92.png?x-oss-process=image/resize,w_900)
 
@@ -321,9 +349,11 @@ flex-grow 定义了项目的放大比例，默认为 0，也就是即使存在�
 
 如果所有项目的 flex-grow 都为 1，则所有项目平分剩余空间；如果其中某个项目的 flex-grow 为 2，其余项目的 flex-grow 为 1，则前者占据的剩余空间比其他项目多一倍。
 
-    .item {
-    flex-grow: <number>;
-    }
+```css
+.item {
+  flex-grow: <number>;
+}
+```
 
 ![](https://cdn.nlark.com/yuque/0/2018/png/199663/1543129904362-310d8908-2458-4fb7-abb8-157a45920db2.png?x-oss-process=image/resize,w_900)
 
@@ -341,9 +371,11 @@ flex-shrink 定义了项目的缩小比例，默认为 1，即当空间不足时
 
 负值对该属性无效。
 
-    .item {
-    flex-shrink: <number>；
-    }
+```css
+.item {
+  flex-shrink: <number>；;
+}
+```
 
 ![](https://cdn.nlark.com/yuque/0/2018/png/199663/1543132006935-09ab4bb7-732f-4092-ad10-e3bcefd86ce9.png?x-oss-process=image/resize,w_900)
 
@@ -359,9 +391,11 @@ flex-basis 定义了在分配多余的空间之前，项目占据的主轴空间
 
 flex-basis 的设置跟 width 或 height 一样，可以是像素，也可以是百分比。设置了 flex-basis 之后，它的优先级比 width 或 height 高。
 
-    .item {
-    flex-basis: <length> | auto;
-    }
+```css
+.item {
+  flex-basis: <length> | auto;
+}
+```
 
 ![](https://cdn.nlark.com/yuque/0/2018/png/199663/1543133040010-941a4e3b-5aad-429a-888f-b0ed4da2e460.png?x-oss-process=image/resize,w_900)
 
@@ -373,9 +407,11 @@ flex 属性是 flex-grow、flex-shrink、flex-basis 的缩写，默认值是 0 1
 
 该属性有两个快捷值：auto（1 1 auto）和 none（0 0 auto）。auto 代表在需要的时候可以拉伸也可以收缩，none 表示既不能拉伸也不能收缩。
 
-    .item {
-    flex: auto | none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ]
-    }
+```css
+.item {
+  flex: auto | none | [ < "flex-grow" > < "flex-shrink" >? || < "flex-basis" > ];
+}
+```
 
 #### align-self
 
@@ -383,9 +419,11 @@ align-self 用来定义单个项目与其他项目不一样的对齐方式，可
 
 align-self 的六个可能属性值，除了 auto 之外，其他的表现和 align-items 一样。
 
-    .item {
-    align-self: auto | flex-start | flex-end | center | baseline | stretch;
-    }
+```css
+.item {
+  align-self: auto | flex-start | flex-end | center | baseline | stretch;
+}
+```
 
 ![](https://cdn.nlark.com/yuque/0/2018/png/199663/1543135456654-b7f06914-077a-4067-bef4-42ab141d7069.png?x-oss-process=image/resize,w_900)
 
@@ -397,36 +435,53 @@ align-self 的六个可能属性值，除了 auto 之外，其他的表现和 al
 
 还记得上一节的三栏布局实现么，如果使用 Flex 布局该如何实现呢？我们用上面的知识来尝试一下。首先给出基本代码：
 
-    <divclass="container"><divclass="center">center</div><divclass="left">left</div><divclass="right">right</div></div>
-
-    .center {
-    height: 150px;
-    background-color: #94E8FF;
-    }
-    .left {
-    width: 100px;
-    height: 150px;
-    background-color: #FFB5BF;
-    }
-    .right {
-    width: 200px;
-    height: 150px;
-    background-color: #8990D5;
-    }
+```css
+<div
+  class="container"
+  > <div
+  class="center"
+  > center</div
+  > <div
+  class="left"
+  > left</div
+  > <div
+  class="right"
+  > right</div
+  > </div
+  > .center {
+  height: 150px;
+  background-color: #94e8ff;
+}
+.left {
+  width: 100px;
+  height: 150px;
+  background-color: #ffb5bf;
+}
+.right {
+  width: 200px;
+  height: 150px;
+  background-color: #8990d5;
+}
+```
 
 我们首先将容器设置为 Flex 布局：
 
-    .container {
-    display: flex;
-    }
+```css
+.container {
+  display: flex;
+}
+```
 
 接下来要解决的问题有，如何将 .left 排列在最左边，和如何将 .center 占满剩余空间。在项目属性的学习中，order 属性可以改变项目的排列顺序，flex-grow 可以定义项目的放大比例。没错，利用这两个属性便能解决我们的问题。
 
-    .left {
-    order: -1;
-    }
-    .center {
-    flex-grow: 1;   /* flex: 1; 也行 */}
+```css
+.left {
+  order: -1;
+}
+.center {
+  flex-grow: 1; /* flex: 1; 也行 */
+}
+```
 
 是不是很简单，Flex 布局相对于传统布局更灵活好用，上面只是给出了一个方法，更多的方法期待大家去探索。
 
@@ -434,11 +489,13 @@ align-self 的六个可能属性值，除了 auto 之外，其他的表现和 al
 
 当子元素的高度不确定时，处理垂直居中就比较麻烦，但是使用 Flex 布局中容器有关对齐方式的属性便能快速解决，以下代码子元素在父元素中是水平、垂直居中的。
 
-    .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    }
+```css
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+```
 
 布局的实现方式多种多样，多动手，勤加练习，综合考虑各种因素，根据需要找到最适合的方式才是最好的实现。阮一峰老师有给出 Flex 布局的一些实例，对实际场景很有用，推荐阅读：[Flex 布局教程：实例篇](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html)。
 
@@ -448,7 +505,11 @@ align-self 的六个可能属性值，除了 auto 之外，其他的表现和 al
 
 因为历史原因，W3C 对 flex 做了多次更新，也就导致了各浏览器支持度参差不齐。到目前为止，Flex 布局有一下几种写法：
 
-    display: box;                   /* 2009 version 老语法 */display: flexbox;               /* 2011 version 过渡语法 */display: flex | inline-flex;    /* 2012 version 新语法 */
+```css
+display: box; /* 2009 version 老语法 */
+display: flexbox; /* 2011 version 过渡语法 */
+display: flex | inline-flex; /* 2012 version 新语法 */
+```
 
 从 [Can I Use](https://caniuse.com/#search=flex) 上可以看出目前 Flex 布局对浏览器的支持情况。从中我们可以总结出新语法目前的支持情况：
 
@@ -472,8 +533,15 @@ IE Mobile 11+
 
 更低的版本需要加上前缀进行支持，不同版本所在时期不同也会导致属性值不同，这里有一个推荐的兼容性写法：
 
-    .page-wrap {
-    display: -webkit-box;      /* 老语法 iOS 6-, Safari 3.1-6 */display: -moz-box;         /* 老语法 Firefox 19- (buggy but mostly works) */display: -ms-flexbox;      /* 过渡语法 IE 10 */display: -webkit-flex;     /* 新语法 Chrome */display: flex;             /* 新语法, Spec - Opera 12.1, Firefox 20+ */ }
+```css
+.page-wrap {
+  display: -webkit-box; /* 老语法 iOS 6-, Safari 3.1-6 */
+  display: -moz-box; /* 老语法 Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox; /* 过渡语法 IE 10 */
+  display: -webkit-flex; /* 新语法 Chrome */
+  display: flex; /* 新语法, Spec - Opera 12.1, Firefox 20+ */
+}
+```
 
 ### 小结
 

@@ -20,9 +20,17 @@
     - [JS（三） 比较运算符、逻辑运算符](?file=002-javascript/001-ES5基础语法/003-JS（三） 比较运算符、逻辑运算符 "JS（三） 比较运算符、逻辑运算符")
     - [JS（四）条件语句、循环语句](?file=002-javascript/001-ES5基础语法/004-JS（四）条件语句、循环语句 "JS（四）条件语句、循环语句")
     - [JS（五）简要介绍数组或对象 typeof、类型转换](?file=002-javascript/001-ES5基础语法/005-JS（五）简要介绍数组或对象 typeof、类型转换 "JS（五）简要介绍数组或对象 typeof、类型转换")
+    - [JS（六）函数、初始作用域](?file=002-javascript/001-ES5基础语法/006-JS（六）函数、初始作用域 "JS（六）函数、初始作用域")
+    - [JS（七）递归](?file=002-javascript/001-ES5基础语法/007-JS（七）递归 "JS（七）递归")
+    - [JS（八）预编译执行过程](?file=002-javascript/001-ES5基础语法/008-JS（八）预编译执行过程 "JS（八）预编译执行过程")
+    - [JS（九）作用域、作用域链](?file=002-javascript/001-ES5基础语法/009-JS（九）作用域、作用域链 "JS（九）作用域、作用域链")
+- **ES6语言特性**
+    - [扩展运算符](?file=002-javascript/002-ES6语言特性/001-扩展运算符 "扩展运算符")
+    - [箭头函数](?file=002-javascript/002-ES6语言特性/002-箭头函数 "箭头函数")
+    - [ES6 继承和 ES5 继承的差异](?file=002-javascript/002-ES6语言特性/003-ES6 继承和 ES5 继承的差异 "ES6 继承和 ES5 继承的差异")
+    - [decorator](?file=002-javascript/002-ES6语言特性/004-decorator "decorator")
 - [移动端事件](?file=002-javascript/018-移动端事件 "移动端事件")
 - [jQuery](?file=002-javascript/019-jQuery "jQuery")
-- [插件](?file=002-javascript/020-插件 "插件")
 - [扩展](?file=002-javascript/021-扩展 "扩展")
 - [附录1开发技巧](?file=002-javascript/022-附录1开发技巧 "附录1开发技巧")
 
